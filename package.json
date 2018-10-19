@@ -1,0 +1,16 @@
+{
+  "name": "jas",
+  "version": "1.0.0",
+  "description": "Jason Automation System",
+  "main": "route.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jason Hsu",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "socket.io": "^2.1.1",
+    "website-scraper": "^3.3.7"
+  }
+}
