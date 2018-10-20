@@ -1,7 +1,6 @@
 var scrape = require('website-scraper');
-
 var fs = require('fs');
-
+var path = require("path");
 
 var options_arr = [];
 
