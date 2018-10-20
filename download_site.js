@@ -33,7 +33,7 @@ set_option(options_arr,"https://www.tagsis.com/",'tagsis2');
 
 for(var i=0;i<options_arr.length;i++){
     scrape(options_arr[i]).then((result) => {
-        console.log(result);
+        console.log(result[0]);
     
     }).catch(console.log);
 }
