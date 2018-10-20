@@ -9,11 +9,10 @@ var options_arr = [];
 
 
 //指定下載的url和存放位置
-cron.schedule('* * * * *', () => {
-    console.log('running a task every minute');
-    set_option(options_arr, "https://www.thenewslens.com/", 'tagsis1');
-    set_option(options_arr, "https://www.tagsis.com/", 'tagsis2');
-});
+
+
+cron.schedule('* * * * *',set_option(options_arr, "https://www.thenewslens.com/", 'tagsis1'));
+cron.schedule('* * * * *',set_option(options_arr, "https://www.tagsis.com/", 'tagsis2'));
 
 
 
@@ -33,15 +32,19 @@ function set_option(options_arr, url, dir) {
             }
         },
     };
-    options_arr.push(a);
+    console.log("set push");
+    scrape(a).then((result, options_arr) => {
+
+    }).catch(console.log);
+    // options_arr.push(a);
 }
 
 //用for迴圈判斷 要下載多少東西
-for (var i = 0; i < options_arr.length; i++) {
-    scrape(options_arr[i]).then((result, options_arr) => {
+// for (var i = 0; i < options_arr.length; i++) {
+//     scrape(options_arr[i]).then((result, options_arr) => {
 
-    }).catch(console.log);
-}
+//     }).catch(console.log);
+// }
 
 
 
