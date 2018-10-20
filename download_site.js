@@ -11,15 +11,20 @@ var options_arr = [];
 //指定下載的url和存放位置
 
 
-cron.schedule('* * * * *',set_option(options_arr, "https://www.thenewslens.com/", 'tagsis1'));
-cron.schedule('* * * * *',set_option(options_arr, "https://www.tagsis.com/", 'tagsis2'));
-
+// cron.schedule('* * * * *',set_option(options_arr, "https://www.thenewslens.com/", 'tagsis1'));
+// cron.schedule('* * * * *',set_option(options_arr, "https://www.tagsis.com/", 'tagsis2'));
+cron.schedule('* * * * *', () => {
+    set_option(options_arr, "https://www.thenewslens.com/", 'tagsis1');
+    set_option(options_arr, "https://www.tagsis.com/", 'tagsis2');
+  });
 
 
 //==================================================================
 function set_option(options_arr, url, dir) {
     //如果該目錄已經存在，先將此目錄刪除
     if (fs.existsSync('public/DemoPage/site/' + dir)) {
+        console.log("刪除");
+        
         deleteDir('public/DemoPage/site/' + dir);
     }
     //呼叫此function 後 會將 options 參數push進options 陣列
