@@ -2,18 +2,22 @@ var scrape = require('website-scraper');
 var fs = require('fs');
 var path = require("path");
 var cron = require('node-cron');
- 
-cron.schedule('* * * * *', () => {
-  console.log('running a task every minute');
-});
+
+
 //儲存參數的陣列
 var options_arr = [];
 
 
 //指定下載的url和存放位置
-set_option(options_arr, "https://www.thenewslens.com/", 'tagsis1');
-set_option(options_arr, "https://www.tagsis.com/", 'tagsis2');
+cron.schedule('* * * * *', () => {
+    console.log('running a task every minute');
+    set_option(options_arr, "https://www.thenewslens.com/", 'tagsis1');
+    set_option(options_arr, "https://www.tagsis.com/", 'tagsis2');
+});
 
+
+
+//==================================================================
 function set_option(options_arr, url, dir) {
     //如果該目錄已經存在，先將此目錄刪除
     if (fs.existsSync('public/DemoPage/site/' + dir)) {
@@ -67,5 +71,3 @@ function deleteDir(url) {
     }
 
 }
-
-
