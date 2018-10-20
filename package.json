@@ -9,8 +9,10 @@
   "author": "Jason Hsu",
   "license": "ISC",
   "dependencies": {
+    "cron": "^1.4.1",
     "express": "^4.16.4",
     "fs": "0.0.1-security",
+    "node-cron": "^2.0.3",
     "path": "^0.12.7",
     "socket.io": "^2.1.1",
     "website-scraper": "^3.3.7"

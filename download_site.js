@@ -1,6 +1,11 @@
 var scrape = require('website-scraper');
 var fs = require('fs');
 var path = require("path");
+var cron = require('node-cron');
+ 
+cron.schedule('* * * * *', () => {
+  console.log('running a task every minute');
+});
 //儲存參數的陣列
 var options_arr = [];
 
@@ -62,3 +67,5 @@ function deleteDir(url) {
     }
 
 }
+
+
