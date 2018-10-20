@@ -23,13 +23,12 @@ function set_option(options_arr,url,dir){
 
 
 //指定下載的url和存放位置
-set_option(options_arr,"https://www.tagsis.com/",'tagsis1');
+set_option(options_arr,"https://www.thenewslens.com/",'tagsis1');
 set_option(options_arr,"https://www.tagsis.com/",'tagsis2');
 
 
 for(var i=0;i<options_arr.length;i++){
     scrape(options_arr[i]).then((result,options_arr) => {
-        console.log(options_arr[i]);
     
     }).catch(console.log);
 }
