@@ -13,7 +13,7 @@ var options_arr = [];
 
 // cron.schedule('* * * * *',set_option(options_arr, "https://www.thenewslens.com/", 'tagsis1'));
 // cron.schedule('* * * * *',set_option(options_arr, "https://www.tagsis.com/", 'tagsis2'));
-cron.schedule('* * * * *', () => {
+cron.schedule('* 30 * * *', () => {
     set_option(options_arr, "https://www.thenewslens.com/", 'tagsis1');
     set_option(options_arr, "https://www.tagsis.com/", 'tagsis2');
   });
